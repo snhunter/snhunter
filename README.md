@@ -9,3 +9,5 @@ snh.py applies gamma correction to the linear images from Supernova Hunters. Usi
 
 ![Original Image from Supernova Hunters](https://github.com/snhunter/snhunter/blob/master/test-image.jpg)
 ![Enhanced Image](https://github.com/snhunter/snhunter/blob/master/test-image_gamma.jpg)
+
+Note: Images should be viewed against dark background
