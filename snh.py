@@ -13,7 +13,7 @@ basename = filename.split('.')
 im = scipy.misc.imread(filename, flatten=True)
 
 #Read crosshair overlay
-overlay = Image.open("data/snhunter/crosshair.png")
+overlay = Image.open("crosshair.png")
 
 
 #Apply gamma correction to linear image data from PANSTARRS
