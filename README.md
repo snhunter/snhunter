@@ -1,7 +1,7 @@
 # snhunter
 Usage: `python snh.py test-image.jpg`
 
-snh.py expects input image as argument and writes result to {basename}_gamma{_gs|_cm}.jpg
+snh.py expects input image as argument and writes result to {basename}\\_gamma\\_{gs|cm}.jpg
 
 
 ## Sample Images
