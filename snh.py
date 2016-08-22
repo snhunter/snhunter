@@ -14,6 +14,7 @@ im = scipy.misc.imread(filename, flatten=True)
 
 #Read crosshair overlay
 overlay = Image.open("crosshair.png")
+overlaycolor = Image.open("crosshaircolor.png")
 
 
 #Apply gamma correction to linear image data from PANSTARRS
@@ -21,11 +22,14 @@ im = (im/255.)**(2.2)
 
 #Apply perceptually uniform (CAM02UCS color space) and colorblindness-friendly colormap
 #See https://bids.github.io/colormap/images/screenshots/option_a.png
-#Change magma to gray for grayscale colormap
-im = Image.fromarray(cm.magma(im, bytes=True))
+#Generate grayscale version
+imcm = Image.fromarray(cm.magma(im, bytes=True))
+imgs = Image.fromarray(cm.gray(im, bytes=True))
 
 #Merge background with overlay
-im = Image.alpha_composite(im, overlay)
+imcm = Image.alpha_composite(imcm, overlay)
+imgs = Image.alpha_composite(imgs, overlaycolor)
 
-#Save final result
-im.save(basename[0] + "_gamma.jpg", quality=93, optimize=True, progressive=True)
+#Save final results
+imcm.save(basename[0] + "_gamma_cm.jpg", subsampling="4:4:4", quality=89, optimize=True, progressive=True)
+imgs.save(basename[0] + "_gamma_gs.jpg", subsampling="4:4:4", quality=89, optimize=True, progressive=True)
