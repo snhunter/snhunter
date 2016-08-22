@@ -3,6 +3,7 @@ Usage: `python snh.py test-image.jpg`
 
 snh.py expects input image as argument and writes result to `{basename}_gamma_(gs|cm).jpg`
 
+Further information: [Supernova Hunters Talk](https://www.zooniverse.org/projects/dwright04/supernova-hunters/talk/478/80831)
 
 ## Sample Images
 snh.py applies gamma correction to the linear images from Supernova Hunters. Using a perceptually uniform colormap it further facilitates supernova classification.
